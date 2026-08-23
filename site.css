@@ -352,6 +352,7 @@ h3 {
   isolation: isolate;
 }
 
+.hero-video-desktop,
 .hero-video-mobile,
 .hero-media,
 .hero-overlay {
@@ -359,21 +360,21 @@ h3 {
   inset: 0;
 }
 
-.hero-video-mobile {
+.hero-media {
   z-index: 0;
-  display: none;
+}
+
+.hero-video-desktop,
+.hero-video-mobile {
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.section-cover-video-mobile {
+.hero-video-mobile {
   display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .hero-media img {
@@ -384,7 +385,7 @@ h3 {
 }
 
 .hero-overlay {
-  z-index: 1;
+  z-index: 2;
   background:
     linear-gradient(180deg, rgba(20, 13, 8, 0.5) 0%, rgba(20, 13, 8, 0.1) 38%, rgba(20, 13, 8, 0.42) 100%),
     linear-gradient(90deg, rgba(20, 13, 8, 0.56) 0%, rgba(20, 13, 8, 0.18) 52%, rgba(20, 13, 8, 0.24) 100%);
@@ -556,7 +557,6 @@ h3 {
 }
 
 .restaurant-cover picture,
-.restaurant-cover video,
 .restaurant-cover img {
   width: 100%;
   height: 100%;
@@ -746,7 +746,6 @@ h3 {
 }
 
 .location-cover picture,
-.location-cover video,
 .location-cover img {
   width: 100%;
   height: 100%;
@@ -1667,6 +1666,10 @@ h3 {
     filter: brightness(1.06) contrast(1.04) saturate(1.03);
   }
 
+  .hero-video-desktop {
+    display: none;
+  }
+
   .hero-media {
     display: none;
   }
@@ -1775,14 +1778,9 @@ h3 {
     object-position: center 30%;
   }
 
-  .restaurant-cover .section-cover-video-mobile,
-  .location-cover .section-cover-video-mobile {
-    display: block;
-  }
-
   .restaurant-cover picture,
   .location-cover picture {
-    display: none;
+    display: block;
   }
 
   .section-kicker {
