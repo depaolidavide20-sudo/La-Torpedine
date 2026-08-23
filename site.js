@@ -8,6 +8,7 @@
   const form = document.querySelector("[data-booking-form]");
   const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
   const menuCloseButtons = document.querySelectorAll("[data-menu-close]");
+  const carouselButtons = document.querySelectorAll("[data-carousel-target]");
 
   const setPageLocked = () => {
     const anyOpen = [bookingModal, menuModal].some((target) => target && !target.hidden);
@@ -50,6 +51,22 @@
   applyLanguage(initialLanguage);
   languageButtons.forEach((button) => {
     button.addEventListener("click", () => applyLanguage(button.getAttribute("data-lang-button")));
+  });
+
+  carouselButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(button.getAttribute("data-carousel-target"));
+      const direction = button.getAttribute("data-carousel-direction") === "-1" ? -1 : 1;
+
+      if (!target) {
+        return;
+      }
+
+      target.scrollBy({
+        left: direction * target.clientWidth * 0.9,
+        behavior: "smooth",
+      });
+    });
   });
 
   if (!modal || !form) {

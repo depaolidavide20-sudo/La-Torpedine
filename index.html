@@ -58,6 +58,9 @@
 
     <main id="main">
       <section class="hero" id="top" aria-label="Osteria La Torpedine">
+        <video class="hero-video-mobile" autoplay muted loop playsinline preload="metadata" poster="assets/hero-torpedine-mobile.webp" aria-label="Video di copertina mobile dell'Osteria La Torpedine">
+          <source src="assets/hero-torpedine-mobile.mp4" type="video/mp4">
+        </video>
         <picture class="hero-media">
           <source srcset="assets/hero-torpedine-mobile.webp" media="(max-width: 720px)">
           <img src="assets/hero-torpedine-desktop.webp" alt="Cena serale davanti all'Osteria La Torpedine nei caruggi di Riomaggiore" width="1672" height="941" decoding="async" fetchpriority="high">
@@ -76,7 +79,8 @@
               <svg class="button-icon button-icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
                 <path d="M16 3.2a12.7 12.7 0 0 0-11 19l-1.5 5.6 5.7-1.5A12.7 12.7 0 1 0 16 3.2Zm0 22.8c-2 0-3.9-.6-5.6-1.6l-.4-.2-3.4.9.9-3.3-.2-.4A10.3 10.3 0 1 1 16 26Zm5.8-7.6c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.4-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.8-1-2.5-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.4 1.4.6 2 .7.8.3 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.4-.3-.9-.5Z"></path>
               </svg>
-              <span data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</span>
+              <span class="booking-label-desktop" data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</span>
+              <span class="booking-label-mobile" data-it="Prenota ora" data-en="Book now">Prenota ora</span>
               <span aria-hidden="true">-&gt;</span>
             </button>
             <a class="button button-ghost" href="https://www.google.com/maps/search/?api=1&query=Osteria%20La%20Torpedine%2C%20Via%20Antonio%20Gramsci%2025%2C%2019017%20Riomaggiore%20SP" target="_blank" rel="noopener noreferrer">
@@ -131,7 +135,7 @@
           </div>
         </div>
 
-        <div class="restaurant-gallery" aria-label="Carosello Ristorante">
+        <div class="restaurant-gallery" id="restaurant-gallery" aria-label="Carosello Ristorante">
           <figure class="gallery-card">
                 <picture>
                   <source srcset="assets/restaurant-01-mobile.webp" media="(max-width: 720px)">
@@ -169,6 +173,10 @@
                 </picture>
               </figure>
         </div>
+        <div class="carousel-controls" aria-label="Controlli carosello Ristorante">
+            <button type="button" aria-label="Immagine precedente" data-carousel-target="restaurant-gallery" data-carousel-direction="-1"><span aria-hidden="true">&lt;</span></button>
+            <button type="button" aria-label="Immagine successiva" data-carousel-target="restaurant-gallery" data-carousel-direction="1"><span aria-hidden="true">&gt;</span></button>
+          </div>
       </section>
 
       <section class="location-section" id="location">
@@ -186,7 +194,7 @@
         <div class="location-layout">
           <div class="location-copy">
             <h2 data-it="Riomaggiore, a pochi passi dal mare e dalla stazione." data-en="Riomaggiore, a few steps from the sea and the station.">Riomaggiore, a pochi passi dal mare e dalla stazione.</h2>
-            <p data-it="L'osteria si trova in Via Antonio Gramsci 25, nel tessuto piu vivo del borgo. Una posizione comoda per chi arriva in treno, per chi rientra dai sentieri e per chi cerca una pausa autentica tra le strade pedonali delle Cinque Terre." data-en="The osteria is located at Via Antonio Gramsci 25, in the liveliest part of the village. A convenient stop for guests arriving by train, returning from the trails or looking for an authentic pause in the pedestrian lanes of the Cinque Terre.">
+            <p class="location-subtitle" data-it="L'osteria si trova in Via Antonio Gramsci 25, nel tessuto piu vivo del borgo. Una posizione comoda per chi arriva in treno, per chi rientra dai sentieri e per chi cerca una pausa autentica tra le strade pedonali delle Cinque Terre." data-en="The osteria is located at Via Antonio Gramsci 25, in the liveliest part of the village. A convenient stop for guests arriving by train, returning from the trails or looking for an authentic pause in the pedestrian lanes of the Cinque Terre.">
               L'osteria si trova in Via Antonio Gramsci 25, nel tessuto piu
               vivo del borgo. Una posizione comoda per chi arriva in treno, per
               chi rientra dai sentieri e per chi cerca una pausa autentica tra
@@ -200,7 +208,7 @@
           </div>
         </div>
 
-        <div class="location-gallery" aria-label="Gallery Location">
+        <div class="location-gallery" id="location-gallery" aria-label="Gallery Location">
           <figure class="location-gallery-card">
                 <picture>
                   <source srcset="assets/location-01-mobile.webp" media="(max-width: 720px)">
@@ -238,6 +246,10 @@
                 </picture>
               </figure>
         </div>
+        <div class="carousel-controls" aria-label="Controlli carosello Location">
+            <button type="button" aria-label="Immagine precedente" data-carousel-target="location-gallery" data-carousel-direction="-1"><span aria-hidden="true">&lt;</span></button>
+            <button type="button" aria-label="Immagine successiva" data-carousel-target="location-gallery" data-carousel-direction="1"><span aria-hidden="true">&gt;</span></button>
+          </div>
       </section>
 
       <section class="reviews-section" id="recensioni">
