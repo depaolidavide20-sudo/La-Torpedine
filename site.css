@@ -307,15 +307,22 @@ h3 {
 
 .button-icon-whatsapp {
   display: block;
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
   aspect-ratio: 1;
-  transform: translateZ(0);
+  transform: none;
 }
 
 .button-icon-whatsapp path {
   fill: currentColor;
+}
+
+.google-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
 }
 
 .button-icon rect,
@@ -544,7 +551,7 @@ h3 {
 
 .restaurant-cover img {
   object-fit: cover;
-  object-position: center;
+  object-position: center 28%;
 }
 
 .restaurant-story {
@@ -575,7 +582,7 @@ h3 {
   display: grid;
   gap: 20px;
   width: min(520px, 100%);
-  margin: 78px auto 0;
+  margin: 64px auto 0;
   padding: 48px 42px;
   background: rgba(255, 250, 240, 0.72);
 }
@@ -891,11 +898,13 @@ h3 {
 }
 
 .review-card {
-  min-height: 264px;
+  display: grid;
+  min-height: 220px;
+  align-content: start;
   margin: 0;
   border: 1px solid rgba(33, 28, 24, 0.12);
   border-radius: var(--radius);
-  padding: 30px;
+  padding: 24px 26px;
   background:
     linear-gradient(180deg, rgba(255, 250, 240, 0.78), rgba(255, 250, 240, 0.5)),
     #f4ead6;
@@ -907,7 +916,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .review-card-top strong {
@@ -927,16 +936,17 @@ h3 {
   margin: 0;
   color: rgba(33, 28, 24, 0.82);
   font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.02rem;
+  font-size: 0.96rem;
   font-weight: 680;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 
 .review-card figcaption {
-  margin-top: 28px;
+  margin-top: 20px;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.72rem;
   font-weight: 850;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -1637,6 +1647,10 @@ h3 {
     display: inline;
   }
 
+  .hero-actions .button-primary .booking-arrow {
+    display: none;
+  }
+
   .hero-actions .button-ghost {
     display: none;
   }
@@ -1654,6 +1668,10 @@ h3 {
     height: 72vw;
     min-height: 320px;
     margin-bottom: 72px;
+  }
+
+  .restaurant-cover img {
+    object-position: center 30%;
   }
 
   .section-kicker {
@@ -1777,9 +1795,13 @@ h3 {
   .location-gallery {
     grid-auto-columns: 100%;
     gap: 18px;
-    width: min(100% - 42px, 1900px);
+    width: 100%;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .location-section .carousel-controls {
+    width: 100%;
   }
 
   .location-gallery-card img {
@@ -1846,8 +1868,8 @@ h3 {
   }
 
   .review-card {
-    min-height: 286px;
-    padding: 24px;
+    min-height: 224px;
+    padding: 22px;
     scroll-snap-align: start;
   }
 
