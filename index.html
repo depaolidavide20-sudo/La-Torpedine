@@ -107,6 +107,9 @@
         </div>
 
         <figure class="opening-media restaurant-cover">
+          <video class="section-cover-video-mobile" autoplay muted loop playsinline preload="metadata" poster="assets/restaurant-cover-mobile.webp" aria-label="Video di copertina mobile della sezione Ristorante">
+            <source src="assets/restaurant-cover-mobile.mp4" type="video/mp4">
+          </video>
           <picture>
             <source srcset="assets/restaurant-cover-mobile.webp" media="(max-width: 720px)">
             <img src="assets/restaurant-cover-desktop.webp" alt="Ingresso dell'Osteria La Torpedine tra le scale in pietra di Riomaggiore" width="1672" height="820" loading="lazy" decoding="async">
@@ -180,6 +183,9 @@
         </div>
 
         <figure class="location-cover">
+          <video class="section-cover-video-mobile" autoplay muted loop playsinline preload="metadata" poster="assets/location-cover-mobile.webp" aria-label="Video di copertina mobile della sezione Location">
+            <source src="assets/location-cover-mobile.mp4" type="video/mp4">
+          </video>
           <picture>
             <source srcset="assets/location-cover-mobile.webp" media="(max-width: 720px)">
             <img src="assets/location-cover-desktop.webp" alt="Borgo di Riomaggiore al tramonto affacciato sul mare" width="1672" height="820" loading="lazy" decoding="async">
@@ -250,12 +256,7 @@
       <section class="reviews-section" id="recensioni">
         <div class="reviews-inner">
           <p class="review-pill" data-it="Recensioni" data-en="Reviews">Recensioni</p>
-          <h2 data-it="Una delle tavole piu apprezzate di Riomaggiore." data-en="One of Riomaggiore's most appreciated tables.">Una delle tavole piu apprezzate di Riomaggiore.</h2>
-          <p class="review-intro" data-it="Le valutazioni pubbliche evidenziano una cucina di mare curata, un servizio attento e un'atmosfera intima, con punteggi alti sulle principali piattaforme di recensione." data-en="Public reviews highlight refined seafood cuisine, attentive service and an intimate atmosphere, with strong ratings on the main review platforms.">
-            Le valutazioni pubbliche evidenziano una cucina di mare curata,
-            un servizio attento e un'atmosfera intima, con punteggi alti sulle
-            principali piattaforme di recensione.
-          </p>
+          <h2 data-it="Le parole di chi è passato da qui" data-en="Words from those who stopped here">Le parole di chi è passato da qui</h2>
 
           <div class="review-grid">
             <figure class="review-card">
@@ -335,6 +336,17 @@
         </div>
       </section>
     </main>
+
+    <div class="mobile-sticky-booking" aria-label="Prenotazione rapida">
+      <button class="button button-primary" type="button" data-booking-open>
+        <svg class="button-icon button-icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
+                <path d="M20.52 3.48A11.88 11.88 0 0 0 12.07 0C5.5 0 .15 5.34.15 11.91c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01C18.66 23.81 24 18.47 24 11.9c0-3.18-1.24-6.17-3.48-8.42ZM12.08 21.8h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.72.98 1-3.63-.23-.37a9.85 9.85 0 0 1-1.51-5.28c0-5.45 4.43-9.89 9.88-9.89a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c-.01 5.45-4.45 9.89-9.9 9.89Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.08-.13-.27-.2-.57-.35Z"></path>
+              </svg>
+        <span class="booking-label-desktop" data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</span>
+        <span class="booking-label-mobile" data-it="Prenota ora" data-en="Book now">Prenota ora</span>
+        <span class="booking-arrow" aria-hidden="true">-&gt;</span>
+      </button>
+    </div>
 
     <div class="menu-modal-backdrop" data-menu-modal hidden>
       <button class="menu-modal-scrim" type="button" aria-label="Chiudi menu" data-menu-close></button>
