@@ -23,6 +23,9 @@
 
   const playActiveHeroVideo = () => {
     heroVideos.forEach((video) => {
+      video.autoplay = true;
+      video.controls = false;
+      video.loop = true;
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
@@ -52,7 +55,7 @@
   });
 
   requestAnimationFrame(playActiveHeroVideo);
-  window.setTimeout(playActiveHeroVideo, 250);
+  [80, 250, 700, 1400].forEach((delay) => window.setTimeout(playActiveHeroVideo, delay));
   window.addEventListener("pageshow", playActiveHeroVideo);
   window.addEventListener("resize", playActiveHeroVideo);
   window.addEventListener("scroll", playActiveHeroVideo, { once: true, passive: true });
