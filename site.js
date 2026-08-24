@@ -1,5 +1,6 @@
 (() => {
   const languageButtons = document.querySelectorAll("[data-lang-button]");
+  const heroVideos = Array.from(document.querySelectorAll("[data-hero-video]"));
   const bookingModal = document.querySelector("[data-booking-modal]");
   const menuModal = document.querySelector("[data-menu-modal]");
   const modal = document.querySelector("[data-booking-modal]");
@@ -9,6 +10,59 @@
   const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
   const menuCloseButtons = document.querySelectorAll("[data-menu-close]");
   const carouselButtons = document.querySelectorAll("[data-carousel-target]");
+
+  const isHeroVideoVisible = (video) => {
+    const style = window.getComputedStyle(video);
+    return (
+      style.display !== "none" &&
+      style.visibility !== "hidden" &&
+      video.clientWidth > 0 &&
+      video.clientHeight > 0
+    );
+  };
+
+  const playActiveHeroVideo = () => {
+    heroVideos.forEach((video) => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+
+      if (!isHeroVideoVisible(video)) {
+        return;
+      }
+
+      if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+        video.load();
+      }
+
+      const playRequest = video.play();
+      if (playRequest && typeof playRequest.catch === "function") {
+        playRequest.catch(() => {});
+      }
+    });
+  };
+
+  heroVideos.forEach((video) => {
+    video.addEventListener("loadeddata", playActiveHeroVideo);
+    video.addEventListener("canplay", playActiveHeroVideo);
+  });
+
+  requestAnimationFrame(playActiveHeroVideo);
+  window.setTimeout(playActiveHeroVideo, 250);
+  window.addEventListener("pageshow", playActiveHeroVideo);
+  window.addEventListener("resize", playActiveHeroVideo);
+  window.addEventListener("scroll", playActiveHeroVideo, { once: true, passive: true });
+  window.addEventListener("pointerdown", playActiveHeroVideo, { once: true, passive: true });
+  window.addEventListener("touchstart", playActiveHeroVideo, { once: true, passive: true });
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      playActiveHeroVideo();
+    }
+  });
 
   const setPageLocked = () => {
     const anyOpen = [bookingModal, menuModal].some((target) => target && !target.hidden);
