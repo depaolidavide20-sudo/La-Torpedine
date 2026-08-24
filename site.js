@@ -31,8 +31,14 @@
       video.playsInline = true;
       video.preload = "auto";
       video.setAttribute("muted", "");
+      video.setAttribute("autoplay", "");
       video.setAttribute("playsinline", "");
       video.setAttribute("webkit-playsinline", "");
+      video.removeAttribute("controls");
+
+      if (video.classList.contains("hero-video-mobile")) {
+        video.removeAttribute("poster");
+      }
 
       if (!isHeroVideoVisible(video)) {
         return;

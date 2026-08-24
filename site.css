@@ -369,12 +369,25 @@ h3 {
   z-index: 1;
   width: 100%;
   height: 100%;
+  background: #020202;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
 }
 
 .hero-video-mobile {
   display: none;
+}
+
+.hero-video-desktop::-webkit-media-controls,
+.hero-video-mobile::-webkit-media-controls,
+.hero-video-desktop::-webkit-media-controls-panel,
+.hero-video-mobile::-webkit-media-controls-panel,
+.hero-video-desktop::-webkit-media-controls-start-playback-button,
+.hero-video-mobile::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
 }
 
 .hero-media img {

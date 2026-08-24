@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="it_IT">
     <link rel="icon" href="favicon.svg">
-    <link rel="preload" as="video" href="assets/hero-torpedine-mobile.mp4" type="video/mp4" media="(max-width: 720px)">
+    <link rel="preload" as="video" href="assets/hero-torpedine-mobile-autoplay.mp4" type="video/mp4" media="(max-width: 720px)">
     <link rel="preload" as="video" href="assets/hero-torpedine-desktop.mp4" type="video/mp4" media="(min-width: 721px)">
     <link rel="preload" as="image" href="assets/hero-torpedine-mobile.webp" imagesrcset="assets/hero-torpedine-mobile.webp 900w" imagesizes="100vw" media="(max-width: 720px)" fetchpriority="high">
     <link rel="preload" as="image" href="assets/hero-torpedine-desktop.webp" imagesrcset="assets/hero-torpedine-desktop.webp 1672w" imagesizes="100vw" media="(min-width: 721px)" fetchpriority="high">
@@ -60,12 +60,13 @@
 
     <main id="main">
       <section class="hero" id="top" aria-label="Osteria La Torpedine">
-        <video class="hero-video-desktop" data-hero-video="true" autoplay muted loop playsinline preload="auto" poster="assets/hero-torpedine-desktop.webp" aria-label="Video di copertina desktop dell'Osteria La Torpedine">
+        <video class="hero-video-desktop" data-hero-video="true" autoplay muted loop playsinline webkit-playsinline="true" disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen" preload="auto" poster="assets/hero-torpedine-desktop.webp" aria-label="Video di copertina desktop dell'Osteria La Torpedine">
           <source src="assets/hero-torpedine-desktop.mp4" type="video/mp4">
         </video>
-        <video class="hero-video-mobile" data-hero-video="true" autoplay muted loop playsinline preload="auto" poster="assets/hero-torpedine-mobile.webp" aria-label="Video di copertina mobile dell'Osteria La Torpedine">
-          <source src="assets/hero-torpedine-mobile.mp4" type="video/mp4">
+        <video class="hero-video-mobile" data-hero-video="true" autoplay muted loop playsinline webkit-playsinline="true" disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen" preload="auto" aria-label="Video di copertina mobile dell'Osteria La Torpedine">
+          <source src="assets/hero-torpedine-mobile-autoplay.mp4" type="video/mp4">
         </video>
+        <script>(function(){var query=window.matchMedia("(max-width: 720px)");function pick(){return document.querySelector(query.matches?".hero-video-mobile":".hero-video-desktop")}function start(){var video=pick();if(!video)return;video.autoplay=true;video.controls=false;video.loop=true;video.muted=true;video.defaultMuted=true;video.playsInline=true;video.preload="auto";video.setAttribute("autoplay","");video.setAttribute("muted","");video.setAttribute("playsinline","");video.setAttribute("webkit-playsinline","");video.removeAttribute("controls");if(video.classList.contains("hero-video-mobile")){video.removeAttribute("poster")}var play=video.play();if(play&&typeof play.catch==="function"){play.catch(function(){})}}start();[40,120,260,600,1200].forEach(function(delay){window.setTimeout(start,delay)});window.addEventListener("pageshow",start);document.addEventListener("visibilitychange",function(){if(!document.hidden)start()});if(query.addEventListener){query.addEventListener("change",start)}})();</script>
         <picture class="hero-media">
           <source srcset="assets/hero-torpedine-mobile.webp" media="(max-width: 720px)">
           <img src="assets/hero-torpedine-desktop.webp" alt="Cena serale davanti all'Osteria La Torpedine nei caruggi di Riomaggiore" width="1672" height="941" decoding="async" fetchpriority="high">
